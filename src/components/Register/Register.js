@@ -1,13 +1,16 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import './Register.css';
 
 function Register() {
   const { register, handleSubmit, formState: { errors } } = useForm();
+  let navigate = useNavigate()
 
   const onSubmit = data => {
     console.log(data);
     alert("Registration Successful!");
+    navigate("/login")
   };
 
   return (
